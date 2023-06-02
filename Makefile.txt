@@ -1,0 +1,18 @@
+ CXX = g++
+ CXXFLAGS = -Wall
+ LDLIBS = -lpthread
+
+ PROGRAMS = Server
+ OBJS = Server.o errorFun.o
+
+ all: $(PROGRAMS)
+
+ $(PROGRAMS) : $(OBJS)
+     $(CXX) -o $(PROGRAMS) $(OBJS) $(LDLIBS)
+
+ %.o : %.c
+     $(CXX) -c $(OBJS) -o $(PROGRAMS)
+
+ clean:
+     rm -f $(PROGRAMS)
+     rm -rf *.o
